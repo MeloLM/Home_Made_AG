@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Gioielli Artigianali Fatti a Mano')
+@section('title', 'Gioielli Artigianali')
 @section('meta_description', 'Scopri la nostra collezione di gioielli artigianali fatti a mano. Rosari, braccialetti e collane per Battesimo, Comunione, Matrimonio e ogni occasione speciale.')
 
 @section('content')
