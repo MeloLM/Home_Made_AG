@@ -114,7 +114,7 @@
     /* Event Card - For "Shop by Event" navigation */
     .card-event {
         @apply relative bg-white rounded-elegant shadow-card overflow-hidden
-               group cursor-pointer
+               cursor-pointer
                hover:shadow-elegant-lg
                transition-all duration-300 ease-in-out;
     }
@@ -122,8 +122,11 @@
     .card-event-overlay {
         @apply absolute inset-0 bg-gradient-to-t from-content/60 via-content/20 to-transparent
                flex items-end justify-center pb-6
-               group-hover:from-content/70
                transition-all duration-300;
+    }
+
+    .card-event:hover .card-event-overlay {
+        @apply from-content/70;
     }
 
     .card-event-title {
