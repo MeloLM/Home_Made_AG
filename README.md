@@ -6,216 +6,218 @@
   <img src="https://img.shields.io/badge/PostgreSQL-Supabase-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
 </p>
 
-<h1 align="center">💎 Gioielli Artigianali</h1>
-
 <p align="center">
-  <strong>E-Commerce per Gioielli Fatti a Mano</strong><br>
-  Collane • Bracciali • Rosari • Creazioni Uniche
+  <img src="https://img.shields.io/github/license/MeloLM/Home_Made_AG?style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/last-commit/MeloLM/Home_Made_AG?style=flat-square" alt="Last Commit">
+  <img src="https://img.shields.io/github/issues/MeloLM/Home_Made_AG?style=flat-square" alt="Issues">
+  <img src="https://img.shields.io/github/stars/MeloLM/Home_Made_AG?style=flat-square" alt="Stars">
 </p>
 
+<h1 align="center">
+  <br>
+  <img src="https://raw.githubusercontent.com/MeloLM/Home_Made_AG/main/public/images/logo.png" alt="Gioielli Artigianali" width="200">
+  <br>
+  Gioielli Artigianali
+  <br>
+</h1>
+
+<h4 align="center">E-Commerce per Gioielli Fatti a Mano | Collane • Bracciali • Rosari</h4>
+
 <p align="center">
-  <a href="#-caratteristiche">Caratteristiche</a> •
-  <a href="#-demo">Demo</a> •
-  <a href="#-installazione">Installazione</a> •
-  <a href="#-architettura">Architettura</a> •
-  <a href="#-roadmap">Roadmap</a>
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-roadmap">Roadmap</a> •
+  <a href="#-contributing">Contributing</a>
 </p>
 
 ---
 
-## 📖 Descrizione
+## About
 
-**Gioielli Artigianali** è un'applicazione e-commerce monolitica sviluppata con Laravel 12, progettata specificamente per la vendita di gioielli artigianali fatti a mano. Il progetto nasce dalla passione per l'artigianato italiano e dalla volontà di creare una piattaforma elegante che valorizzi ogni creazione unica.
+**Gioielli Artigianali** is a monolithic e-commerce application built with Laravel 12, designed for selling handcrafted jewelry. The project combines Italian artisan passion with modern web development practices.
 
-### 🎯 Filosofia del Progetto
+### Key Concepts
 
-- **Artigianalità Prima**: Ogni prodotto è presentato come opera d'arte unica
-- **Shop by Event**: I prodotti sono categorizzati per occasione (Battesimo, Matrimonio, Laurea...) non per tipo
-- **Design Elegante**: Palette colori neutra e raffinata che esalta i gioielli
-- **Codice Pulito**: Architettura SOLID con pattern professionali
+| Concept | Description |
+|---------|-------------|
+| **Craftsmanship First** | Each product is presented as a unique work of art |
+| **Shop by Event** | Products categorized by occasion, not by type |
+| **Elegant Design** | Neutral, refined color palette that highlights jewelry |
+| **Clean Code** | SOLID architecture with professional patterns |
 
 ---
 
-## ✨ Caratteristiche
+## Quick Start
 
-### 🎨 Design & UX
-| Feature | Descrizione |
-|---------|-------------|
-| **Tema Neutral & Elegant** | Palette Beige/Cream con accenti Carta da Zucchero |
-| **Responsive Design** | Mobile-first, ottimizzato per tutti i dispositivi |
-| **Tipografia Curata** | Great Vibes + Playfair Display + Lato |
-| **Animazioni Fluide** | Transizioni CSS e interazioni Alpine.js |
+```bash
+# Clone the repository
+git clone https://github.com/MeloLM/Home_Made_AG.git
+cd Home_Made_AG
 
-### 🛍️ E-Commerce
-| Feature | Descrizione |
-|---------|-------------|
-| **Shop by Event** | Navigazione per occasione (7 eventi) |
-| **Catalogo Prodotti** | Filtri, ordinamento, ricerca |
-| **Dettaglio Prodotto** | Gallery, materiali, dimensioni |
-| **Carrello** | Gestione con Alpine.js + localStorage |
-| **Wishlist** | Lista desideri (Coming Soon) |
+# Install dependencies
+composer install && npm install
 
-### ⚙️ Tecnico
-| Feature | Descrizione |
-|---------|-------------|
-| **Service-Repository Pattern** | Separazione responsabilità |
-| **Caching Strategico** | Cache su Service layer |
-| **PSR-12 Compliant** | Standard PHP coding style |
-| **Type Hints** | PHP 8.2+ strict typing |
-| **Architecture Check** | Comando per verificare coerenza |
+# Environment setup
+cp .env.example .env
+php artisan key:generate
+
+# Database (configure .env first)
+php artisan migrate --seed
+
+# Build & serve
+npm run build && php artisan serve
+```
+
+> **Note:** See [Installation](#-installation) for detailed Supabase configuration.
 
 ---
 
-## 🎬 Demo
+## Features
 
-> 🚧 **Demo live coming soon!**
+### Design & UX
 
-### Screenshots
+- **Neutral & Elegant Theme** - Beige/Cream palette with Carta da Zucchero accents
+- **Responsive Design** - Mobile-first, optimized for all devices
+- **Curated Typography** - Great Vibes + Playfair Display + Lato
+- **Smooth Animations** - CSS transitions and Alpine.js interactions
 
-<details>
-<summary>📸 Clicca per vedere gli screenshots</summary>
+### E-Commerce
 
-#### Homepage
-```
-┌─────────────────────────────────────────┐
-│  🏠 GIOIELLI ARTIGIANALI               │
-│  ════════════════════════════════════  │
-│                                         │
-│  ┌─────────────────────────────────┐   │
-│  │                                 │   │
-│  │         HERO SECTION            │   │
-│  │    "Creazioni Uniche per        │   │
-│  │     Momenti Speciali"           │   │
-│  │                                 │   │
-│  └─────────────────────────────────┘   │
-│                                         │
-│  ═══ SHOP BY EVENT ═══                 │
-│  ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐      │
-│  │Batt.│ │Comun│ │Matri│ │Laure│      │
-│  └─────┘ └─────┘ └─────┘ └─────┘      │
-│                                         │
-│  ═══ PRODOTTI IN EVIDENZA ═══          │
-│  ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐      │
-│  │ 💎  │ │ 📿  │ │ 💍  │ │ ✨  │      │
-│  │€45  │ │€38  │ │€52  │ │€29  │      │
-│  └─────┘ └─────┘ └─────┘ └─────┘      │
-└─────────────────────────────────────────┘
-```
+- **Shop by Event** - Navigation by occasion (7 events)
+- **Product Catalog** - Filters, sorting, search
+- **Product Detail** - Gallery, materials, dimensions
+- **Shopping Cart** - Alpine.js + localStorage management
+- **Wishlist** - Coming soon
 
-#### Pagina Evento
-```
-┌─────────────────────────────────────────┐
-│  MATRIMONIO 💒                          │
-│  ════════════════════════════════════  │
-│                                         │
-│  Filtri: [Prezzo ▼] [Materiale ▼]      │
-│                                         │
-│  ┌─────┐ ┌─────┐ ┌─────┐              │
-│  │Colla│ │Bracc│ │Orecch│              │
-│  │na   │ │iale │ │ini   │              │
-│  │€89  │ │€65  │ │€45   │              │
-│  └─────┘ └─────┘ └─────┘              │
-│                                         │
-│  [1] [2] [3] ... [Prossima →]          │
-└─────────────────────────────────────────┘
-```
+### Technical
 
-</details>
+- **Service-Repository Pattern** - Separation of concerns
+- **Strategic Caching** - Cache on Service layer
+- **PSR-12 Compliant** - PHP coding standard
+- **Type Hints** - PHP 8.2+ strict typing
+- **Architecture Check** - Custom command for consistency verification
 
 ---
 
-## 🛠️ Stack Tecnologico
+## Tech Stack
+
+<table>
+<tr>
+<td valign="top" width="50%">
 
 ### Backend
-```
-Laravel 12.47.0          Framework PHP
-├── Eloquent ORM         Database abstraction
-├── Blade Templates      View engine
-├── Artisan CLI          Command line tools
-└── Service Container    Dependency injection
-```
+
+<img src="https://img.shields.io/badge/Laravel-12.47.0-FF2D20?style=flat&logo=laravel&logoColor=white">
+<img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white">
+
+- Eloquent ORM
+- Blade Templates
+- Artisan CLI
+- Service Container
+
+</td>
+<td valign="top" width="50%">
 
 ### Frontend
-```
-Tailwind CSS 3.4         Utility-first CSS
-├── Custom Components    .btn-*, .card-*, .nav-*
-├── Custom Colors        primary, secondary, accent
-└── Custom Fonts         Great Vibes, Playfair Display
 
-Alpine.js 3.13           Reactive JavaScript
-├── x-data              Component state
-├── $store.cart         Global cart state
-└── @click, x-show      Event handling
-```
+<img src="https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat&logo=tailwind-css&logoColor=white">
+<img src="https://img.shields.io/badge/Alpine.js-3.13-8BC0D0?style=flat&logo=alpine.js&logoColor=white">
+<img src="https://img.shields.io/badge/Vite-5.x-646CFF?style=flat&logo=vite&logoColor=white">
+
+- Custom Components
+- Reactive JavaScript
+- Hot Module Reload
+
+</td>
+</tr>
+<tr>
+<td valign="top" width="50%">
 
 ### Database
-```
-PostgreSQL (Supabase)    Cloud database
-├── events              7 occasioni
-├── products            Catalogo gioielli
-├── event_product       Pivot many-to-many
-├── users               Autenticazione
-├── cache               Session/cache store
-└── jobs                Queue system
-```
+
+<img src="https://img.shields.io/badge/PostgreSQL-Supabase-336791?style=flat&logo=postgresql&logoColor=white">
+
+- Cloud hosted
+- Session pooler (IPv4)
+- Real-time capabilities
+
+</td>
+<td valign="top" width="50%">
 
 ### DevOps
-```
-Vite 5.x                Asset bundling
-├── Hot Module Reload   Dev experience
-└── Production Build    Optimized assets
 
-Git + GitHub            Version control
-└── CI/CD ready         GitHub Actions compatible
+<img src="https://img.shields.io/badge/Git-GitHub-181717?style=flat&logo=github&logoColor=white">
+
+- Version control
+- CI/CD ready
+- GitHub Actions compatible
+
+</td>
+</tr>
+</table>
+
+---
+
+## Architecture
+
+### Service-Repository Pattern
+
+```
+Request → Controller → Service → Repository → Model → Database
+              ↓            ↓
+           Validate    Cache + Logic
+```
+
+### Directory Structure
+
+```
+app/
+├── Console/Commands/        # Artisan commands
+├── Http/Controllers/        # Request handlers
+├── Models/                  # Eloquent models
+├── Providers/               # Service providers
+├── Repositories/            # Data access layer
+│   └── Contracts/           # Interfaces
+├── Services/                # Business logic layer
+│   └── Contracts/           # Interfaces
+└── View/Composers/          # View data injection
+```
+
+### Database Schema
+
+```
+events ──────────┐
+  │              │
+  │    event_product (pivot)
+  │              │
+products ────────┘
+
+users
+cache
+jobs
 ```
 
 ---
 
-## 📦 Installazione
+## Installation
 
-### Prerequisiti
+### Prerequisites
 
-| Requisito | Versione | Verifica |
-|-----------|----------|----------|
+| Requirement | Version | Check |
+|-------------|---------|-------|
 | PHP | 8.2+ | `php -v` |
 | Composer | 2.x | `composer -V` |
 | Node.js | 18+ | `node -v` |
 | npm | 9+ | `npm -v` |
 
-### Quick Start
+### Supabase Configuration
 
-```bash
-# 1. Clona il repository
-git clone https://github.com/MeloLM/Home_Made_AG.git
-cd Home_Made_AG
-
-# 2. Installa dipendenze
-composer install
-npm install
-
-# 3. Configura ambiente
-cp .env.example .env
-php artisan key:generate
-
-# 4. Configura database (vedi sezione Supabase)
-# Modifica .env con le tue credenziali
-
-# 5. Migra e popola database
-php artisan migrate --seed
-
-# 6. Compila assets
-npm run build
-
-# 7. Avvia server
-php artisan serve
-```
-
-### Configurazione Supabase
-
-1. Crea un progetto su [supabase.com](https://supabase.com)
-2. Vai su **Settings → Database**
-3. Seleziona **Session Pooler** (per IPv4)
-4. Copia i parametri nel tuo `.env`:
+1. Create a project at [supabase.com](https://supabase.com)
+2. Go to **Settings → Database**
+3. Select **Session Pooler** (for IPv4)
+4. Update your `.env`:
 
 ```env
 DB_CONNECTION=pgsql
@@ -226,306 +228,109 @@ DB_USERNAME=postgres.YOUR_PROJECT_REF
 DB_PASSWORD=YOUR_PASSWORD
 ```
 
-### Comandi Utili
+### Commands Reference
+
+| Command | Description |
+|---------|-------------|
+| `php artisan serve` | Start local server |
+| `npm run dev` | Vite with hot reload |
+| `npm run build` | Production build |
+| `php artisan migrate:fresh --seed` | Reset database |
+| `php artisan app:check-architecture` | Verify project structure |
+
+---
+
+## Design System
+
+### Color Palette
+
+| Name | Hex | Preview | Usage |
+|------|-----|---------|-------|
+| Primary | `#F5F5DC` | ![Primary](https://img.shields.io/badge/-F5F5DC-F5F5DC?style=flat-square) | Background, buttons |
+| Secondary | `#B0C4DE` | ![Secondary](https://img.shields.io/badge/-B0C4DE-B0C4DE?style=flat-square) | Links, accents |
+| Accent | `#D4AF37` | ![Accent](https://img.shields.io/badge/-D4AF37-D4AF37?style=flat-square) | Highlights, badges |
+| Content | `#2D2D2D` | ![Content](https://img.shields.io/badge/-2D2D2D-2D2D2D?style=flat-square) | Text, icons |
+
+### Typography
+
+| Font | Type | Usage |
+|------|------|-------|
+| Great Vibes | Display | Hero titles, brand |
+| Playfair Display | Heading | H1, H2, H3 |
+| Lato | Body | Paragraphs, UI |
+| Montserrat | Body | Buttons, labels |
+
+---
+
+## Roadmap
+
+- [x] **Phase 1: Foundation** - Laravel 12 + Supabase + Service-Repository Pattern
+- [ ] **Phase 2: Core E-Commerce** - Cart backend, checkout, orders, auth
+- [ ] **Phase 3: Advanced Features** - Admin panel, image upload, emails, reviews
+- [ ] **Phase 4: Production** - Tests, CI/CD, performance, SEO
+
+See [TODO.md](TODO.md) for detailed task list.
+
+---
+
+## Testing
 
 ```bash
-# Development
-php artisan serve              # Server locale (http://127.0.0.1:8000)
-npm run dev                    # Vite con hot reload
-
-# Production
-npm run build                  # Build ottimizzata
-php artisan optimize           # Cache config/routes/views
-
-# Database
-php artisan migrate:fresh --seed   # Reset completo
-php artisan db:seed               # Solo seeding
-
-# Manutenzione
-php artisan cache:clear        # Pulisci cache
-php artisan app:check-architecture  # Verifica struttura
-```
-
----
-
-## 🏗️ Architettura
-
-### Pattern: Service-Repository
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      REQUEST                                 │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│                     CONTROLLER                               │
-│  • Riceve request                                           │
-│  • Valida input                                             │
-│  • Chiama Service                                           │
-│  • Ritorna View/Response                                    │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      SERVICE                                 │
-│  • Business logic                                           │
-│  • Caching (Cache::remember)                                │
-│  • Validazione regole business                              │
-│  • Trasformazione dati                                      │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    REPOSITORY                                │
-│  • Data access                                              │
-│  • Query Eloquent                                           │
-│  • Filtri e ordinamento                                     │
-│  • Paginazione                                              │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       MODEL                                  │
-│  • Eloquent ORM                                             │
-│  • Relazioni                                                │
-│  • Accessors/Mutators                                       │
-│  • Scopes                                                   │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Struttura Directory
-
-```
-app/
-├── Console/Commands/
-│   └── CheckArchitecture.php    # Verifica coerenza progetto
-│
-├── Http/Controllers/
-│   ├── Controller.php           # Base controller
-│   ├── HomeController.php       # Homepage
-│   ├── EventController.php      # Shop by Event
-│   ├── ProductController.php    # Catalogo prodotti
-│   └── PageController.php       # Pagine statiche
-│
-├── Models/
-│   ├── Event.php                # belongsToMany(Product)
-│   ├── Product.php              # belongsToMany(Event)
-│   └── User.php                 # Laravel default
-│
-├── Providers/
-│   ├── RepositoryServiceProvider.php  # DI bindings
-│   └── ViewServiceProvider.php        # View composers
-│
-├── Repositories/
-│   ├── Contracts/               # Interfacce
-│   ├── ProductRepository.php
-│   └── EventRepository.php
-│
-├── Services/
-│   ├── Contracts/               # Interfacce
-│   ├── ProductService.php       # Cache TTL: 3600s
-│   └── EventService.php         # Cache TTL: 7200s
-│
-└── View/Composers/
-    └── NavigationComposer.php   # $events globale
-```
-
-### Database Schema
-
-```sql
--- Eventi (Occasioni)
-events
-├── id, name, slug, description
-├── image, meta_title, meta_description
-├── is_active, sort_order
-└── timestamps, soft_deletes
-
--- Prodotti
-products
-├── id, name, slug, description, short_description
-├── price, sale_price, sku, stock_quantity
-├── is_active, is_featured, is_handmade
-├── main_image, gallery_images (JSON)
-├── materials, dimensions, weight
-├── meta_title, meta_description
-└── timestamps, soft_deletes
-
--- Pivot (Many-to-Many)
-event_product
-├── event_id, product_id
-├── is_featured_in_event, sort_order
-└── timestamps
-```
-
----
-
-## 🎨 Design System
-
-### Palette Colori
-
-| Nome | Colore | Uso |
-|------|--------|-----|
-| **Primary** | ![#F5F5DC](https://via.placeholder.com/15/F5F5DC/F5F5DC.png) `#F5F5DC` Beige | Background, buttons |
-| **Secondary** | ![#B0C4DE](https://via.placeholder.com/15/B0C4DE/B0C4DE.png) `#B0C4DE` Carta da Zucchero | Links, accents |
-| **Accent** | ![#D4AF37](https://via.placeholder.com/15/D4AF37/D4AF37.png) `#D4AF37` Gold | Highlights, badges |
-| **Content** | ![#2D2D2D](https://via.placeholder.com/15/2D2D2D/2D2D2D.png) `#2D2D2D` Dark Grey | Text, icons |
-
-### Tipografia
-
-| Font | Tipo | Uso |
-|------|------|-----|
-| **Great Vibes** | Display (Cursive) | Hero titles, brand |
-| **Playfair Display** | Heading (Serif) | H1, H2, H3 |
-| **Lato** | Body (Sans-serif) | Paragraphs, UI |
-| **Montserrat** | Body (Sans-serif) | Buttons, labels |
-
-### Componenti CSS
-
-```css
-/* Buttons */
-.btn-primary    /* Beige filled */
-.btn-secondary  /* Outlined */
-.btn-ghost      /* Transparent */
-
-/* Cards */
-.card-product   /* Product card con shadow */
-.card-event     /* Event card con overlay */
-
-/* Navigation */
-.nav-link       /* Link navigazione */
-
-/* Forms */
-.form-input     /* Input fields */
-.form-select    /* Select dropdown */
-```
-
----
-
-## 🗺️ Roadmap
-
-### ✅ Fase 1: Fondamenta (Completata)
-- [x] Setup Laravel 12 + Supabase
-- [x] Service-Repository Pattern
-- [x] Modelli Event e Product
-- [x] Homepage e catalogo
-- [x] Design Tailwind + Alpine.js
-
-### 🔄 Fase 2: Core E-Commerce (In Progress)
-- [ ] Backend carrello (sessioni)
-- [ ] Checkout flow
-- [ ] Sistema ordini
-- [ ] Autenticazione utenti
-
-### 📋 Fase 3: Features Avanzate
-- [ ] Pannello Admin
-- [ ] Upload immagini
-- [ ] Email transazionali
-- [ ] Sistema recensioni
-- [ ] Wishlist
-
-### 🚀 Fase 4: Production
-- [ ] Test suite
-- [ ] CI/CD Pipeline
-- [ ] Performance optimization
-- [ ] SEO avanzato
-- [ ] Analytics
-
----
-
-## 🧪 Testing
-
-```bash
-# Esegui tutti i test
+# Run all tests
 php artisan test
 
-# Test con coverage
+# With coverage
 php artisan test --coverage
 
-# Test specifico
-php artisan test --filter=ProductServiceTest
-```
-
-### Verifica Architettura
-
-Il progetto include un comando custom per verificare la coerenza:
-
-```bash
-php artisan app:check-architecture
-
-# Output dettagliato
+# Architecture verification
 php artisan app:check-architecture --detailed
 ```
 
-Questo comando verifica:
-- ✅ Esistenza di tutti i Models, Controllers, Services
-- ✅ Tabelle database presenti
-- ✅ Views Blade esistenti
-- ✅ Route definite
-- ✅ Binding DI configurati
-- 📝 Genera report in `TODO.md`
-
 ---
 
-## 📁 File Importanti
+## Contributing
 
-| File | Descrizione |
-|------|-------------|
-| `ARCHITECTURE.md` | Mappa concettuale del progetto |
-| `TODO.md` | Task list con priorità |
-| `.env.example` | Template variabili ambiente |
-| `tailwind.config.js` | Configurazione Tailwind custom |
-| `vite.config.js` | Configurazione build |
+Contributions are welcome! Please read our contributing guidelines first.
 
----
-
-## 🤝 Contributing
-
-Le contribuzioni sono benvenute! Per contribuire:
-
-1. Fork del repository
-2. Crea un branch (`git checkout -b feature/AmazingFeature`)
-3. Commit delle modifiche (`git commit -m 'Add AmazingFeature'`)
-4. Push al branch (`git push origin feature/AmazingFeature`)
-5. Apri una Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ### Coding Standards
 
-- PSR-12 per PHP
-- Type hints obbligatori
-- Commenti in italiano o inglese
-- Test per nuove features
+- PSR-12 for PHP
+- Type hints required
+- Tests for new features
 
 ---
 
-## 📄 Licenza
+## License
 
-Distribuito sotto licenza MIT. Vedi `LICENSE` per maggiori informazioni.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-## 👤 Autore
+## Author
 
 **Carmelo La Mantia** - [@MeloLM](https://github.com/MeloLM)
 
 ---
 
-## 🙏 Ringraziamenti
+## Acknowledgments
 
 - [Laravel](https://laravel.com) - The PHP Framework
 - [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS
 - [Alpine.js](https://alpinejs.dev) - Lightweight JS framework
 - [Supabase](https://supabase.com) - Open source Firebase alternative
-- [Heroicons](https://heroicons.com) - Beautiful hand-crafted SVG icons
 
 ---
 
 <p align="center">
-  Creato con ❤️ per gli artigiani italiani
-</p>
-
-<p align="center">
-  <a href="https://github.com/MeloLM/Home_Made_AG">⭐ Star this repo</a> •
-  <a href="https://github.com/MeloLM/Home_Made_AG/issues">🐛 Report Bug</a> •
-  <a href="https://github.com/MeloLM/Home_Made_AG/issues">💡 Request Feature</a>
+  Made with ❤️ for Italian artisans
+  <br><br>
+  <a href="https://github.com/MeloLM/Home_Made_AG/stargazers">
+    <img src="https://img.shields.io/github/stars/MeloLM/Home_Made_AG?style=social" alt="Stars">
+  </a>
 </p>

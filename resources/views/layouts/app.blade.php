@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Gioielli Artigianali') | {{ config('app.name', 'Handmade Jewelry') }}</title>
+    <title>{{ config('app.name', 'Handmade Jewelry') }}</title>
     <meta name="description" content="@yield('meta_description', 'Gioielli artigianali fatti a mano per ogni occasione speciale. Rosari, braccialetti e collane per Battesimo, Comunione, Matrimonio e altro.')">
 
     <!-- Favicon -->
