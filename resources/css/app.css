@@ -1,0 +1,276 @@
+/*
+|--------------------------------------------------------------------------
+| Handmade Jewelry E-Commerce - Main Stylesheet
+|--------------------------------------------------------------------------
+|
+| Theme: "Neutral & Elegant"
+| Stack: Laravel 11.x + Blade + Tailwind CSS + Alpine.js
+|
+*/
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+|--------------------------------------------------------------------------
+| Base Layer - Typography & Element Defaults
+|--------------------------------------------------------------------------
+*/
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply font-body text-content bg-primary-200 antialiased;
+    }
+
+    /* Headings - Elegant Typography */
+    h1 {
+        @apply font-display text-display-xl text-content;
+    }
+
+    h2 {
+        @apply font-heading text-3xl font-semibold text-content tracking-wide;
+    }
+
+    h3 {
+        @apply font-heading text-2xl font-medium text-content;
+    }
+
+    h4 {
+        @apply font-heading text-xl font-medium text-content-light;
+    }
+
+    h5, h6 {
+        @apply font-sans text-lg font-semibold text-content-light;
+    }
+
+    /* Links */
+    a {
+        @apply text-secondary-700 hover:text-secondary-800 transition-colors duration-200;
+    }
+
+    /* Form Elements */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="tel"],
+    textarea,
+    select {
+        @apply border-primary-600 bg-white focus:border-secondary-400 focus:ring-secondary-300 rounded-elegant;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Components Layer - Reusable UI Components
+|--------------------------------------------------------------------------
+*/
+@layer components {
+    /* Primary Button - Elegant Style */
+    .btn-primary {
+        @apply inline-flex items-center justify-center px-6 py-3
+               bg-secondary-300 text-content font-medium
+               rounded-elegant shadow-elegant
+               hover:bg-secondary-400 hover:shadow-elegant-lg
+               focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-primary-200
+               transition-all duration-200 ease-in-out;
+    }
+
+    /* Secondary Button - Outlined Style */
+    .btn-secondary {
+        @apply inline-flex items-center justify-center px-6 py-3
+               bg-transparent text-content font-medium
+               border-2 border-secondary-400
+               rounded-elegant
+               hover:bg-secondary-100 hover:border-secondary-500
+               focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-primary-200
+               transition-all duration-200 ease-in-out;
+    }
+
+    /* Ghost Button */
+    .btn-ghost {
+        @apply inline-flex items-center justify-center px-4 py-2
+               text-content-light font-medium
+               hover:text-content hover:bg-primary-300
+               rounded-elegant
+               transition-all duration-200 ease-in-out;
+    }
+
+    /* Product Card */
+    .card-product {
+        @apply bg-white rounded-elegant shadow-card overflow-hidden
+               hover:shadow-elegant-lg hover:-translate-y-1
+               transition-all duration-300 ease-in-out;
+    }
+
+    /* Event Card - For "Shop by Event" navigation */
+    .card-event {
+        @apply relative bg-white rounded-elegant shadow-card overflow-hidden
+               group cursor-pointer
+               hover:shadow-elegant-lg
+               transition-all duration-300 ease-in-out;
+    }
+
+    .card-event-overlay {
+        @apply absolute inset-0 bg-gradient-to-t from-content/60 via-content/20 to-transparent
+               flex items-end justify-center pb-6
+               group-hover:from-content/70
+               transition-all duration-300;
+    }
+
+    .card-event-title {
+        @apply font-display text-3xl text-white drop-shadow-lg
+               group-hover:scale-105
+               transition-transform duration-300;
+    }
+
+    /* Navigation Link */
+    .nav-link {
+        @apply relative font-sans text-content-light font-medium
+               hover:text-content
+               after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
+               after:bg-secondary-400 after:transition-all after:duration-300
+               hover:after:w-full;
+    }
+
+    .nav-link-active {
+        @apply text-content after:w-full;
+    }
+
+    /* Badge */
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5
+               text-xs font-medium rounded-full;
+    }
+
+    .badge-handmade {
+        @apply bg-secondary-200 text-secondary-800;
+    }
+
+    .badge-stock {
+        @apply bg-success-50 text-success-600;
+    }
+
+    .badge-out-of-stock {
+        @apply bg-danger-50 text-danger-600;
+    }
+
+    /* Price Display */
+    .price {
+        @apply font-heading text-2xl font-semibold text-content;
+    }
+
+    .price-original {
+        @apply font-sans text-lg text-content-muted line-through;
+    }
+
+    /* Container */
+    .container-elegant {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Section */
+    .section {
+        @apply py-12 md:py-16 lg:py-20;
+    }
+
+    .section-title {
+        @apply font-display text-display-lg text-center text-content mb-4;
+    }
+
+    .section-subtitle {
+        @apply font-body text-lg text-content-muted text-center max-w-2xl mx-auto mb-12;
+    }
+
+    /* Form Group */
+    .form-group {
+        @apply mb-4;
+    }
+
+    .form-label {
+        @apply block text-sm font-medium text-content-light mb-1;
+    }
+
+    .form-input {
+        @apply w-full px-4 py-2.5 border border-primary-600 rounded-elegant
+               bg-white text-content placeholder-content-subtle
+               focus:border-secondary-400 focus:ring-2 focus:ring-secondary-300 focus:ring-opacity-50
+               transition-colors duration-200;
+    }
+
+    .form-error {
+        @apply text-sm text-danger-600 mt-1;
+    }
+
+    /* Alert/Notification */
+    .alert {
+        @apply px-4 py-3 rounded-elegant border;
+    }
+
+    .alert-success {
+        @apply bg-success-50 border-success-500 text-success-600;
+    }
+
+    .alert-warning {
+        @apply bg-warning-50 border-warning-500 text-warning-600;
+    }
+
+    .alert-danger {
+        @apply bg-danger-50 border-danger-500 text-danger-600;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Utilities Layer - Custom Utility Classes
+|--------------------------------------------------------------------------
+*/
+@layer utilities {
+    /* Text Balance for elegant headings */
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Elegant underline decoration */
+    .underline-elegant {
+        @apply underline decoration-secondary-400 decoration-2 underline-offset-4;
+    }
+
+    /* Aspect ratios for images */
+    .aspect-product {
+        aspect-ratio: 3 / 4;
+    }
+
+    .aspect-event {
+        aspect-ratio: 4 / 3;
+    }
+
+    /* Hide scrollbar but allow scrolling */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Fade animation for Alpine.js */
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.3s ease;
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
+    }
+}
