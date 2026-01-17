@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Gioielli Artigianali')
-@section('meta_description', 'Scopri la nostra collezione di gioielli artigianali fatti a mano. Rosari, braccialetti e collane per Battesimo, Comunione, Matrimonio e ogni occasione speciale.')
+@section('title', 'Dettagli Boutique - Gioielli Artigianali')
+@section('meta_description', 'Dettagli Boutique - Scopri la nostra collezione di gioielli artigianali fatti a mano. Rosari, braccialetti e collane per Battesimo, Comunione, Matrimonio e ogni occasione speciale.')
 
 @section('content')
     {{-- Hero Section --}}

@@ -15,9 +15,9 @@
 
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/MeloLM/Home_Made_AG/main/public/images/logo.png" alt="Gioielli Artigianali" width="200">
+  <img src="public/Logo_main.jpeg" alt="Dettagli Boutique" width="200" style="border-radius: 50%;">
   <br>
-  Gioielli Artigianali
+  Dettagli Boutique
   <br>
 </h1>
 
@@ -36,7 +36,7 @@
 
 ## About
 
-**Gioielli Artigianali** is a monolithic e-commerce application built with Laravel 12, designed for selling handcrafted jewelry. The project combines Italian artisan passion with modern web development practices.
+**Dettagli Boutique** is a monolithic e-commerce application built with Laravel 12, designed for selling handcrafted jewelry. The project combines Italian artisan passion with modern web development practices.
 
 ### Key Concepts
 

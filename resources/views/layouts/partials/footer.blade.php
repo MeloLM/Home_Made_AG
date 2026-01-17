@@ -5,8 +5,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {{-- Brand Column --}}
             <div class="lg:col-span-1">
-                <a href="{{ route('home') }}" class="font-display text-3xl text-content">
-                    Gioielli Artigianali
+                <a href="{{ route('home') }}" class="flex items-center space-x-3">
+                    <img src="{{ asset('Logo_main.jpeg') }}" alt="Dettagli Boutique" class="h-10 w-10 rounded-full object-cover">
+                    <span class="font-display text-2xl text-content">Dettagli Boutique</span>
                 </a>
                 <p class="mt-4 text-content-light leading-relaxed">
                     Creazioni uniche fatte a mano con amore e passione.
@@ -118,7 +119,7 @@
         <div class="container-elegant py-4">
             <div class="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
                 <p class="text-sm text-content-muted">
-                    &copy; {{ date('Y') }} Gioielli Artigianali. Tutti i diritti riservati.
+                    &copy; {{ date('Y') }} Dettagli Boutique. Tutti i diritti riservati.
                 </p>
                 <div class="flex space-x-4 text-sm">
                     <a href="{{ route('privacy') }}" class="text-content-muted hover:text-content transition-colors">

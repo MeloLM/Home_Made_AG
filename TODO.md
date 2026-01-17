@@ -1,4 +1,4 @@
-# 📋 TODO - Gioielli Artigianali E-Commerce
+# 📋 TODO - Dettagli Boutique E-Commerce
 
 > Ultimo aggiornamento: 2026-01-17
 > Generato automaticamente da `php artisan app:check-architecture`

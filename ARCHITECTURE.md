@@ -1,4 +1,4 @@
-# 🏗️ ARCHITECTURE - Gioielli Artigianali E-Commerce
+# 🏗️ ARCHITECTURE - Dettagli Boutique E-Commerce
 
 > Mappa concettuale del progetto per navigazione e organizzazione rapida
 

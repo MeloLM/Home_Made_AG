@@ -8,9 +8,10 @@
     <div class="container-elegant">
         <nav class="flex items-center justify-between h-20">
             {{-- Logo --}}
-            <a href="{{ route('home') }}" class="flex items-center space-x-2 group">
-                <span class="font-display text-3xl text-content group-hover:text-secondary-700 transition-colors">
-                    Gioielli Artigianali
+            <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
+                <img src="{{ asset('Logo_main.jpeg') }}" alt="Dettagli Boutique" class="h-12 w-12 rounded-full object-cover shadow-elegant">
+                <span class="font-display text-2xl text-content group-hover:text-secondary-700 transition-colors">
+                    Dettagli Boutique
                 </span>
             </a>
 
